@@ -17,6 +17,7 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+		<script src="js/quiz.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -28,40 +29,121 @@
 	<body>
 
 		<!-- Header -->
-			<section id="header">
-            <div class="container">
-				<div class="inner">
-					<span class="icon major fa-btc"></span>
-					<h1>Bitcoin, should you throw money at it?</h1>
-					<p>Cryptocurrencies are a bold new way to think about money.<br />
-					Should you acquire some Bitcoins? We'll help you decide.</p>
-					<ul class="actions">
-						<li><a href="#one" class="button scrolly">Help me Decide</a></li>
-					</ul>
-				</div>
+        <section id="header">
+        <div class="container">
+            <div class="inner">
+                <span class="icon major fa-btc"></span>
+                <h1>Bitcoin, should you throw money at it?</h1>
+                <p>Cryptocurrencies are a bold new way to think about money.<br />
+                Should you acquire some Bitcoin?</p>
+                <ul class="actions">
+                    <li><a href="#one" class="button scrolly">Help me Decide</a></li>
+                </ul>
             </div>
-			</section>
+        </div>
+        </section>
 
 		<!-- One -->
-			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row 150%">
-						<div class="6u 12u$(medium)">
-							<header class="major">
-								<h2>Lorem ipsum dolor adipiscing<br />
-								amet dolor consequat</h2>
-							</header>
-							<p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
-						</div>
-						<div class="6u$ 12u$(medium) important(medium)">
-							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
-						</div>
-					</div>
-				</div>
-			</section>
+        <section id="one" class="main style1">
+            <div class="container">
+                <div class="row">
+                    <div id="quiz-frame-1" class="quiz-container">
+                        <header class="minor">
+                            <h2 id="quiz-intro">Let's figure out if buying Bitcoin makes sense for you...</h2>
+                            <span class="icon fa-chevron-right quiz-prompt"></span>
+                            <h2 id="quiz-question">First things first, what was your childhood nickname?</h2>
+                        </header>
+                        <form method="post" action="#">
+                            <div class="row uniform 50%">
+                                <div class="6u 12u$(xsmall)">
+                                    <input type="text" name="user-name" class="quiz-input-text" id="quiz-user-name" value="" placeholder="Childhood Name" />
+                                    <a class="quiz-next" href="javascript: void 0">
+                                        <span class="icon fa-arrow-right"></span>
+                                    </a>
+                                </div>
+                                <div class="6u$ 12u$(xsmall)">
+                                    <input type="reset" value="I didn't have one" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+		<!-- One -->
+			<!--<section id="one" class="main style1">-->
+				<!--<div class="container">-->
+					<!--<div class="row 150%">-->
+						<!--<div class="6u 12u$(medium)">-->
+							<!--<header class="major">-->
+								<!--<h2>Lorem ipsum dolor adipiscing<br />-->
+								<!--amet dolor consequat</h2>-->
+							<!--</header>-->
+							<!--<p>Adipisciid="quiz-frame-1" ng a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>-->
+						<!--</div>-->
+						<!--<div class="6u$ 12u$(medium) important(medium)">-->
+							<!--<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</section>-->
 
 		<!-- Two -->
 			<section id="two" class="main style2">
+
+                        <form method="post" action="#">
+                            <div class="row uniform 50%">
+                                <div class="6u 12u$(xsmall)">
+                                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+                                </div>
+                                <div class="6u$ 12u$(xsmall)">
+                                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+                                </div>
+                                <div class="12u$">
+                                    <div class="select-wrapper">
+                                        <select name="demo-category" id="demo-category">
+                                            <option value="">- Category -</option>
+                                            <option value="1">Manufacturing</option>
+                                            <option value="1">Shipping</option>
+                                            <option value="1">Administration</option>
+                                            <option value="1">Human Resources</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="4u 12u$(small)">
+                                    <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                                    <label for="demo-priority-low">Low</label>
+                                </div>
+                                <div class="4u 12u$(small)">
+                                    <input type="radio" id="demo-priority-normal" name="demo-priority">
+                                    <label for="demo-priority-normal">Normal</label>
+                                </div>
+                                <div class="4u$ 12u$(small)">
+                                    <input type="radio" id="demo-priority-high" name="demo-priority">
+                                    <label for="demo-priority-high">High</label>
+                                </div>
+                                <div class="6u 12u$(small)">
+                                    <input type="checkbox" id="demo-copy" name="demo-copy">
+                                    <label for="demo-copy">Email me a copy</label>
+                                </div>
+                                <div class="6u$ 12u$(small)">
+                                    <input type="checkbox" id="demo-human" name="demo-human" checked>
+                                    <label for="demo-human">Not a robot</label>
+                                </div>
+                                <div class="12u$">
+                                    <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+                                </div>
+                                <div class="12u$">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send Message" class="special" /></li>
+                                        <li><input type="reset" value="Reset" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+
+
 				<div class="container">
 					<div class="row 150%">
 						<div class="6u 12u$(medium)">
