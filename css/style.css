@@ -964,6 +964,7 @@ div.quiz-end-logo {
     color: #993A3A; }
 
 p.quiz-end-reason {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */
