@@ -1,4 +1,5 @@
 #!/bin/bash
+LOCAL_PATH=..
 DEPLOY_PATH=/var/www/buybitcoin.help
 echo "Note: requires sudo"
 echo "Using deploy path: $DEPLOY_PATH"
@@ -14,6 +15,9 @@ chown -R www-data:www-data $DEPLOY_PATH
 chmod -R 570 $DEPLOY_PATH
 chmod g+s $DEPLOY_PATH
 echo "Site contents copied over."
+echo "Restarting Apache"
+
+apache2ctl graceful
 
 echo "Done"
 
