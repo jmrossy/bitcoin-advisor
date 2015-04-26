@@ -29,6 +29,17 @@ $(function() {
     };
 
     var _UserName = "";
+    var _CurrentFame = 1;
+
+    function transitionToFrame( frameId ){
+        $('.quiz-container').fadeOut( 300 );
+        $('.quiz-container').promise().done( function(){
+            $( '#quiz-frame' + frameId ).fadeIn(300);
+        } );
+
+        if ( frameId !== '-no' && frameId !== '-yes' )
+            _CurrentFame = frameId;
+    }
 
     function submitFrame1( userGaveName ) {
         if ( ! userGaveName ) {
@@ -52,73 +63,71 @@ $(function() {
         introText = STRINGS.frame2[ introIndex ].replace( /%name%/gi, _UserName );
         $('#quiz-frame2 .quiz-intro').text ( introText );
 
-        $('#quiz-frame1').fadeOut( 300, function(){
-            $('#quiz-frame2').fadeIn(300);
-        } );
+        transitionToFrame( 2 ) ;
     }
 
     function showFrame3() {
-        $('#quiz-frame2').fadeOut( 300, function(){
-            $('#quiz-frame3').fadeIn(300);
-        } );
+        transitionToFrame( 3 ) ;
     }
 
     function showFrame4() {
         introText = STRINGS.frame4.replace( /%name%/gi, _UserName );
         $('#quiz-frame4 .quiz-intro').html( introText );
 
-        $('#quiz-frame3').fadeOut( 300, function(){
-            $('#quiz-frame4').fadeIn(300);
-        } );
+        transitionToFrame( 4 ) ;
     }
 
     function showFrame5( introIndex ) {
         introText = STRINGS.frame5[ introIndex ].replace( /%name%/gi, _UserName );
         $('#quiz-frame5 .quiz-intro').text ( introText );
 
-        $('#quiz-frame4').fadeOut( 300, function(){
-            $('#quiz-frame5').fadeIn(300);
-        } );
+        transitionToFrame( 5 ) ;
     }
 
     function showFrame6() {
-        $('#quiz-frame5').fadeOut( 300, function(){
-            $('#quiz-frame6').fadeIn(300);
-        } );
+        transitionToFrame( 6 ) ;
     }
 
     function showFrame7() {
-        $('#quiz-frame6').fadeOut( 300, function(){
-            $('#quiz-frame7').fadeIn(300);
-        } );
+        transitionToFrame( 7 ) ;
     }
 
     function showFrame8() {
-        $('#quiz-frame7').fadeOut( 300, function(){
-            $('#quiz-frame8').fadeIn(300);
-        } );
+        transitionToFrame( 8 ) ;
     }
 
     function showFrameNo( reasonIndex ) {
         reasonText = STRINGS.frameEndNo[ reasonIndex ].replace( /%name%/i, _UserName );
         $('.quiz-end-reason').html( reasonText );
-        $('.quiz-container').fadeOut( 300 );
-        $('.quiz-container').promise().done( function(){
-            $('#quiz-frame-no').fadeIn(300);
-        } );
+
+        transitionToFrame( '-no' ) ;
     }
 
     function showFrameYes() {
         reasonText = STRINGS.frameEndYes.replace( /%name%/i, _UserName );
         $('.quiz-end-reason').html( reasonText );
-        $('.quiz-container').fadeOut( 300 );
-        $('.quiz-container').promise().done( function(){
-            $('#quiz-frame-yes').fadeIn(300);
-        } );
+
+        transitionToFrame( '-yes' ) ;
+    }
+
+    function backOneFrame(){
+        transitionToFrame( _CurrentFame ) ;
+    }
+
+    function restartQuiz(){
+        transitionToFrame( 1 ) ;
+        setTimeout(function(){
+            $('#quiz-frame1-username').focus();
+        }, 700);
     }
 
 
     /* WIRE UP BUTTONS */
+    $('#header-scrolly').click( function() {
+        setTimeout(function(){
+            $('#quiz-frame1-username').focus();
+        }, 500);
+    } );
 
     $('#quiz-frame1-noname').click( function() {
         submitFrame1( false ); 
@@ -203,6 +212,14 @@ $(function() {
 
     $('#quiz-frame8-no').click( function() {
         showFrameNo( 9 ); 
+    } );
+
+    $('.quiz-back').click( function() {
+        backOneFrame();
+    } );
+
+    $('.quiz-restart').click( function() {
+        restartQuiz();
     } );
 });
 

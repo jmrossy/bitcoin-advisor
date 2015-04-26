@@ -9,7 +9,7 @@
     <title>Bitcoin Investment Advisor - Advice for People</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A web app to help advise prospective Bitcoin buyers." />
-    <meta name="keywords" content="Bitcoin investment advisor free tool web app #IAmNotALawyerOrBankerOrEvenAnIntelligentPerson" />
+    <meta name="keywords" content="Bitcoin investment advisor free tool web app" />
     <meta name="author" content="J M Rossy">
     <meta name="copyright" content="J M Rossy">
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -37,7 +37,7 @@
             <p>Cryptocurrencies are a bold new way to think about money.<br />
             Should you acquire some Bitcoin?</p>
             <ul class="actions">
-                <li><a href="#one" class="button scrolly">Help me Decide</a></li>
+                <li><a id="header-scrolly" href="#one" class="button scrolly">Help me Decide</a></li>
             </ul>
         </div>
     </div>
@@ -56,8 +56,8 @@
                     </h2>
                 </header>
                 <form method="post" action="#">
-                    <div class="row uniform">
-                        <div class="3u -2u 8u(small) -1u(small)">
+                    <div class="row 50% uniform">
+                        <div class="3u -2u 8u(medium) -1u(medium)">
                             <input type="text" name="user-name" class="quiz-input-text quiz-input-left" id="quiz-frame1-username" value="" placeholder="Childhood Name" />
                         </div>
                         <div class="1u">
@@ -65,7 +65,7 @@
                                 <span class="icon fa-arrow-right"></span>
                             </a>
                         </div>
-                        <div class="6u 12u(small)">
+                        <div class="6u 12u(medium)">
                             <input id="quiz-frame1-noname"  class="quiz-input-right" type="reset" value="I didn't have one" />
                         </div>
                     </div>
@@ -231,6 +231,20 @@
                     <h2 class="quiz-end">Don't buy Bitcoin.</h2>
                 </header>
                 <p class="quiz-end-reason"></p>
+                <div class="row uniform">
+                    <div class="3u -3u 12u$(medium) -0u(medium) ">
+                        <a class="quiz-back button" href="javascript: void 0">
+                            <span class="icon fa-arrow-left"></span>
+                            Back
+                        </a>
+                    </div>
+                    <div class="3u 12u$(medium)">
+                        <a class="quiz-restart button" href="javascript: void 0">
+                            <span class="icon fa-fast-backward"></span>
+                            Start Over
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div id="quiz-frame-yes" class="quiz-container" style="display:none;">
@@ -239,6 +253,20 @@
                     <h2 class="quiz-end">Buy some Bitcoin.</h2>
                 </header>
                 <p class="quiz-end-reason"></p>
+                <div class="row uniform">
+                    <div class="3u -3u 12u$(medium) -0u(medium) ">
+                        <a class="quiz-back button" href="javascript: void 0">
+                            <span class="icon fa-arrow-left"></span>
+                            Back
+                        </a>
+                    </div>
+                    <div class="3u 12u$(medium)">
+                        <a class="quiz-restart button" href="javascript: void 0">
+                            <span class="icon fa-fast-backward"></span>
+                            Start Over
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -251,7 +279,7 @@
             <li><a href="https://github.com/jmrossy" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
         </ul>
         <ul class="copyright">
-            <li>&copy; <a href=http://jmrossy.com">J M Rossy</a></li>
+            <li>&copy; <a href="http://jmrossy.com">J M Rossy</a></li>
             <li>Published under the <a href="https://github.com/jmrossy/south-park-license">South Park license</a></li>
         </ul>
         <ul class="copyright attribution">
